@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="canNang" type="number" >
+<input id="chieuCao" type="number" >
+<button onclick="tinh()" >kiemtra</button>
+<h1 id="kiemtra"></h1>
+<script>
+    function tinh(){
+        let a=+document.getElementById('canNang').value;
+        let b=+document.getElementById('chieuCao').value;
+        let c=a/(b*b)
+        if (c<18.5){document.getElementById('kiemtra').innerHTML = 'kết quá bạn thiếu cân'}
+        if (c>=18.5&&25<c){document.getElementById('kiemtra').innerHTML = 'kết quá bạn hoàn hảo'}
+        if (c>=25.5&&30<c){document.getElementById('kiemtra').innerHTML = 'kết quá bạn hơi thừa cân'}
+        if (c>=30){document.getElementById('kiemtra').innerHTML = 'kết quá bạn bị béo phì'}
+    }
+</script>
+</body>
+</html>
