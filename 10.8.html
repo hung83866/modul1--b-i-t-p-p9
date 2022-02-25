@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><h3>nhap a và b</h3>
+<input id="nhap1" type="text" value="0">
+<input id="nhap2" type="text" value="0">
+<button onclick="tinh1()">kiemtra</button>
+<p id="ra"></p>
+<br>
+<h3>nhập tuổi</h3>
+<input id="nhaptuoi" type="number" value="0">
+<button onclick="tinh2()">kiemtra</button>
+<p id="ra1"></p>
+<br>
+<h3>nhập số rồi ấn kiểm tra:</h3>
+<input id="nhapso" type="number" value="0">
+<button onclick="tinh3()">kiemtra</button>
+<p id="ra3"></p>
+<br>
+<h3>nhập 3 số khác nhau vào 3 ô rồi ấn kiểm tra:</h3>
+<input id="pas1" type="number">
+<input id="pas2" type="number">
+<input id="pas3" type="number">
+<button onclick="tinh4()">kiemtra</button>
+</body>
+<script>
+    function tinh1(){
+        let a = +document.getElementById('nhap1').value;
+        let b = +document.getElementById('nhap2').value;
+          if (a%b==0){
+              document.getElementById('ra').innerHTML = 'a chia het cho b'
+        }else {
+              document.getElementById('ra').innerHTML = 'a ko chia het cho b'
+          }
+    }
+    function tinh2(){
+        let c = +document.getElementById('nhaptuoi').value;
+        if (c>15) {
+            document.getElementById('ra1').innerHTML = 'đủ điều kiện đăng kí học lớp 10'
+        }else {
+            document.getElementById('ra1').innerHTML = ' không đủ điều kiện đăng kí học lớp 10'
+        }
+    }
+    function tinh3(){
+        let d = +document.getElementById('nhapso').value;
+        if (d>=0) {
+            if (d==0) {
+            document.getElementById('ra3').innerHTML = 'bằng 0'
+        }else
+            document.getElementById('ra3').innerHTML = 'lớn hơn 0'
+        }
+        else  {
+            document.getElementById('ra3').innerHTML = 'nhỏ hơn 0'
+        }
+    }
+    function tinh4(){
+        let so1 = +document.getElementById('pas1').value;
+        let so2 = +document.getElementById('pas2').value;
+        let so3 = +document.getElementById('pas3').value;
+        if (a>b) {
+            if (a>c){
+                document.write(so1 + 'là số lớn nhất');
+            }else {
+                document.write(so3 + 'là số lớn nhất');
+            }
+        }else {
+            if (b>c){
+                document.write(so2 + 'là số lớn nhất');
+            }else {
+                document.write(so3 + 'là số lớn nhất');
+            }
+        }
+    }
+
+</script>
+</html>
