@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title >Title</title>
+</head>
+<body>
+<h1> em có yêu anh không?</h1>
+<button onclick="anCo()">có</button>
+<button id="khong" onmouseover="ankhong()" onmouseout="chay()">không</button>
+<script>
+    let ab = document.getElementById('khong');
+    ab.style.position = 'relative';
+    ab.style.left = '0px'
+    function anCo(){
+        alert('anh cung yeu em')
+    }
+    function ankhong(){
+        ab.style.left = parseInt(ab.style.left) + 300 + 'px';
+    }
+    function  chay(){
+        ab.style.left = parseInt(ab.style.left) - 300 + 'px';
+    }
+</script>
+</body>
+
+</html>
