@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>tính thuế cá nhân</h1>
+<h2>tổng thu nhập</h2>
+<input id="thunhap" type="number">
+<h2>lương chính thức</h2>
+<input id="lương" type="number">
+<h2>số người phụ thuộc</h2>
+<input id="phuthuoc" type="number">
+<h2>phụ cấp khác</h2>
+<input id="phucapkhongthue" type="number">
+<button onclick="tinhthue()">tính</button>
+<p id="ketqua"></p>
+<script>
+    function tinhthue(){
+        let a = +document.getElementById('thunhap').value;
+        let b = +document.getElementById('lương').value;
+        let c = +document.getElementById('phuthuoc').value;
+        let x = +document.getElementById('phucapkhongthue').value;
+        let d = a - 11000000 - c*4400000 - b*0.105 - x
+        let nop1 = d*0.05
+        let nop2 = d*0.1 - 250000
+        let nop3 = d*0.15 -750000
+        let nop4 = d*0.2 - 1650000
+        let nop5 = d*0.25 - 3250000
+        let nop6 = d*0.3 - 5850000
+        let nop7 = d*0.35 - 9850000
+        if (d<0){
+            document.getElementById('ketqua').innerHTML = 'không phải nộp thuế cá nhân'
+        }
+        if (d>0&&d<=5000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop1 +'VND'
+        }
+        if (d>5000000&&d<=10000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop2 +'VND'
+        }
+        if (d>10000000&&d<=18000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop3 +'VND'
+        }
+        if (d>18000000&&d<=32000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop4 +'VND'
+        }
+        if (32000000>0&&d<=52000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop5 +'VND'
+        }
+        if (d>52000000&&d<=80000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop6 +'VND'
+        }
+        if (d>80000000){
+            document.getElementById('ketqua').innerHTML = 'thuế phải nộp là :' +nop7 +'VND'
+        }
+    }
+</script>
+</body>
+</html>
